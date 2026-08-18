@@ -1,0 +1,1 @@
+web: gunicorn EJPBackend.wsgi
