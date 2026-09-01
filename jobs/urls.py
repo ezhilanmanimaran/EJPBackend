@@ -24,9 +24,9 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('add/',views.add_job),
     path('update/<int:id>/',views.update_job),
-    path("patch/<int:id>/",views.patch_job),
-    path("all/",views.get_jobs),
-    path("<int:id>/",views.get_job),
+    path('patch/<int:id>/',views.patch_job),
+    path('all/',views.get_jobs),
+    path('<int:id>/',views.get_job),
     path('delete/<int:id>/',views.delete_job),
     path('search/',views.search_jobs)
 ]
