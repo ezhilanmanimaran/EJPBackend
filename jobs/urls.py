@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
@@ -25,5 +27,7 @@ urlpatterns = [
     path("patch/<int:id>/",views.patch_job),
     path("all/",views.get_jobs),
     path("<int:id>/",views.get_job),
-    path('delete/<int:id>/',views.delete_job)
+    path('delete/<int:id>/',views.delete_job),
+    path('search/',views.search_jobs)
 ]
+urlpatterns += static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)
